@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            height: 300vh;
+            position: relative;
+            transition: .5s;
+        }
+        .wrap {
+            background-color: #ccc;
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            top:0;
+            display: flex;
+        }
+
+        .bar {
+            background-color:transparent;
+            width: 10%;
+            height: 100%;
+        }
+        .bar-img {
+            width: 10%;
+            height: 100%;
+        }
+        .bar-img img {
+            width: 100%;
+        }
+        .container {
+            
+            border: 1px solid red;
+            position: absolute;
+            top:600px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateY(300px);
+            opacity: 0;
+            transition: 1s;
+        }
+        .img-wrap  {
+            margin: auto;
+        }
+        .img-wrap img {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap ">
+        <div class="bar"></div>
+        <div class="bar-img">
+            <img src="./imgs/bullet.png" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="img-wrap">
+                        <img src="https://cdn.pixabay.com/photo/2022/01/07/07/08/seal-6921267_960_720.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="img-wrap">
+                        <img src="https://cdn.pixabay.com/photo/2022/01/07/07/08/seal-6921267_960_720.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="img-wrap">
+                        <img src="https://cdn.pixabay.com/photo/2022/01/07/07/08/seal-6921267_960_720.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            // console.log('scroll Top', $(window).scrollTop());
+            // console.log('window height', $(window).height());
+            // console.log('body height', $('body').scrollTop());
+            
+            const scrollT = $(window).scrollTop();
+            const windowH = $(window).height();
+            const bH = $('body').height();
+            // console.log(scrollT);
+            // console.log(`${ scrollT /  (bH - windowH) * 100}%`);
+
+            $('.bar').css('width',`${ scrollT /  (bH - windowH) * 100}%`)                                                                
+            // console.log(scrollT);
+            if (scrollT > 300) {
+                $('body').css('background','green')
+                $('.container').css('transform', 'translateY(0)').css('opacity', '1');
+            }
+            else {
+                $('body').css('background','#000')
+                $('.container').css('transform', 'translateY(300px)').css('opacity', '0');
+            }
+        })
+    </script>
+</body>
+</html>
