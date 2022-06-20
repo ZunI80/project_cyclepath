@@ -43,33 +43,58 @@ function startInterval_index (){
 startInterval_index();
 
 // style輪播
+// 
+// let style_img = 0;
+//  function pageUpdata_style() {
+//      $('.style-train li').css('transition','.5s').css('transform',`translateX(${style_img * -100}%)`)
+//  }
+//  function pageUpdataWithoutTransition_style() {
+//     $('.style-train li').css('transition','none').css('transform',`translateX(${style_img * -100}%)`)
+//  }
+//  function moveRight_style (){
+//     style_img++;
+//      pageUpdata_style ();
+//      if (style_img >= 3) {
+//          $('.style-train li').one('transitionend', function(){
+//             style_img = 0
+//              pageUpdataWithoutTransition_style();
+//          })
+//      }
+//  }
+//  let styleInterval = null;
+//  function startInterval_style (){
+//      styleInterval = setInterval(moveRight_style, 2000);
+//  }
+//  startInterval_style();
+// 
+const clickImg = $(".style-img");
+let style_img = 0;
 
-var style_img = 0;
-
- function pageUpdata_style() {
-     $('.style-train li').css('transition','.5s').css('transform',`translateX(${style_img * -100}%)`)
- }
- function pageUpdataWithoutTransition_style() {
-    $('.style-train li').css('transition','none').css('transform',`translateX(${style_img * -100}%)`)
- }
- function moveRight_style (){
+ clickImg.click(function(){
     style_img++;
-     pageUpdata_style ();
+    $(this).children().children('.style-train li').css('transition','.5s').css('transform',`translateX(${style_img * -100}%)`)
+    console.log($(this));
      if (style_img >= 3) {
-         $('.style-train li').one('transitionend', function(){
+        $(this).children().children('.style-train li').one('transitionend', function(){
+            // console.log($(this);
             style_img = 0
-             pageUpdataWithoutTransition_style();
+            // $(this).css('transition','none').css('transform',`translateX(${style_img * -100}%)`)
+            $(this).css('transition','none').css('transform',`translateX(0%)`)
          })
      }
- }
+ })
 
-let styleInterval = null;
-function startInterval_style (){
-    styleInterval = setInterval(moveRight_style, 2000);
-}
-startInterval_style();
 
-console.log($('section').offset().top);
+
+
+//  let styleInterval = null;
+//  function startInterval_style (){
+//      styleInterval = setInterval(moveRight_style, 2000);
+//  }
+//  startInterval_style();
+
+
+// console.log($('section').offset().top);
 
 
 $(".main-more").click(function(){

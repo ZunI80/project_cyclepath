@@ -153,6 +153,33 @@ nav {
     animation-iteration-count: infinite;
     transform: rotateZ(); 
 }
+.slogan-wrap .slogan-img {
+    opacity: 0;
+}
+#main1 .slogan-img{
+    animation-name: transition_o ;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-delay: 1s; 
+}
+#main2 .slogan-img:nth-child(1){
+    animation-name: transition_o ;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-delay: 2s; 
+}
+#main2 .slogan-img:nth-child(2){
+    animation-name: transition_o ;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-delay: 3s; 
+}
+#main3 .slogan-img{
+    animation-name: transition_o ;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-delay: 4s; 
+}
 @keyframes ss {
     0% {transform: rotateZ(0);
         color: green;        }
@@ -164,6 +191,11 @@ nav {
         color: rgb(255, 123, 0);}
     100% {transform: rotateZ(0deg);
         color: red;          }
+}
+@keyframes transition_o {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
 }
 .parallax {
     width: 100%;
@@ -447,6 +479,7 @@ footer {
 .style-img {
     width: 100%;
     overflow: hidden;
+    cursor: pointer;
 }
 .style-train {
     width: 400%;
@@ -710,8 +743,26 @@ footer {
     .dgr-suit2 {
         display: block;
     }
-    
 }
+#main2 .slogan-img:nth-child(1){
+    animation-name: transition_o ;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-delay: 2s; 
+}
+#main2 .slogan-img:nth-child(2){
+    animation-name: transition_o ;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-delay: 4s; 
+}
+#main3 .slogan-img{
+    animation-name: transition_o ;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-delay: 3s; 
+}
+    
 @media screen and (min-width:820px) {
     
     section {
@@ -762,16 +813,16 @@ footer {
         visibility: visible;
     }
     .slogan-wrap .slogan-img {
-        transform:rotate(10deg);
-        transition: .5s;
-    }
-    .slogan-wrap .slogan-img:hover {
-        transform:rotate(0deg);
+        /* transform:rotate(10deg);
+        transition: .5s; */
         
+    }
+    /* .slogan-wrap .slogan-img:hover {
+        transform:rotate(0deg);
     }
     .slogan-wrap .slogan-img:hover h3 {
         color: yellow;
-    }
+    } */
     .slogan-single {
         top: 0;
         bottom: 0;
@@ -1059,5 +1110,5 @@ footer {
         left: 0;
         bottom: 0;
         margin: auto;
-    }    
+    }
 }
