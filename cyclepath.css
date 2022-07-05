@@ -907,7 +907,7 @@ footer {
         font-size: 18px;
     }
     .hidden-text.show {
-        height: 250px;
+        height: 350px;
     }
     .main-more {
         cursor: pointer;
@@ -916,7 +916,7 @@ footer {
     }
 
     .explore {
-        width: 10%;
+        width: 15%;
     }
     /*  */
     .alltype-text-area h4 {
